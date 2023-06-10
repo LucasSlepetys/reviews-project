@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import reviews from './data';
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
 
 const App = () => {
   const [index, setIndex] = useState(0);
@@ -38,18 +39,19 @@ const App = () => {
         <h3 className='author'>{name}</h3>
         <h4 className='job'>{job}</h4>
         <p className='info'>{text}</p>
+
+        <div>
+          <button onClick={prevButton} className='prev-btn'>
+            {<FaArrowAltCircleLeft />}
+          </button>
+          <button onClick={nextButton} className='next-btn'>
+            {<FaArrowAltCircleRight />}
+          </button>
+        </div>
+        <button type='button' className='btn' onClick={supriseMe}>
+          Suprise me
+        </button>
       </article>
-      <div>
-        <button onClick={prevButton} className='prev-btn'>
-          ←
-        </button>
-        <button onClick={nextButton} className='next-btn'>
-          →
-        </button>
-      </div>
-      <button type='button' className='btn' onClick={supriseMe}>
-        Suprise me
-      </button>
     </main>
   );
 };
